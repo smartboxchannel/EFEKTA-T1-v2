@@ -1,0 +1,150 @@
+{
+  "manufacturer": "EfektaLab",
+  "model": "EFEKTA_T1_v2",
+  "manufacturerId": "EfektaLab",
+  "modelId": "EFEKTA_T1_v2",
+  "template": "/_Battery/BatteryPercentageRemaining.json",
+  "init": [
+    {
+      "link": {
+        "endpoint": 1,
+        "cluster": "0402_TemperatureMeasurement",
+        "attribute": "0000_MeasuredValue"
+      },
+      "bind": true,
+      "report": {
+        "min": 60,
+        "max": 3600,
+        "change": 10
+	  }
+    },
+    {
+        "link": {
+          "endpoint": 1,
+          "cluster": "0001_PowerConfiguration",
+          "attribute": "0021_BatteryPercentageRemaining"
+        },
+        "bind": true,
+        "report": {
+          "min": 3600,
+          "max": 21600,
+          "change": 1
+        }
+    }
+  ],
+  "services": [
+    {
+      "type": "TemperatureSensor",
+      "characteristics": [
+        {
+          "type": "CurrentTemperature",
+          "link": {
+            "endpoint": 1,
+            "cluster": "0402_TemperatureMeasurement",
+            "attribute": "0000_MeasuredValue"
+          }
+        }
+      ]
+    }
+  ],
+  "options": [
+	{
+        "link": {
+          "endpoint": 1,
+          "cluster": "0001_PowerConfiguration",
+          "attribute": "0201_ReadingInterval"
+        },
+        "name": "Интервал отправки данных",
+        "type": "Integer",
+        "init": false,
+        "value": 20,
+        "minValue": 10,
+        "maxValue": 3600,
+        "minStep": 1
+    },
+	{
+        "link": {
+          "endpoint": 1,
+          "cluster": "0001_PowerConfiguration",
+          "attribute": "0275_ConfigReportEnable"
+        },
+        "name": "Работа по пользовательским настройкам отчетов",
+        "type": "Boolean",
+        "init": false,
+        "value": false
+    },
+	{
+        "link": {
+          "endpoint": 1,
+          "cluster": "0001_PowerConfiguration",
+          "attribute": "0205_ConfigReportEnable"
+        },
+        "name": "Сравнение новых данных с предыдущими",
+        "type": "Boolean",
+        "init": false,
+        "value": true
+    },
+    {
+      "link": {
+        "endpoint": 1,
+        "cluster": "0402_TemperatureMeasurement",
+          "attribute": "0220_Enable"
+		},
+      "name": "Термостат",
+      "type": "Boolean",
+      "init": false,
+      "value": false
+    },
+    {
+        "link": {
+          "endpoint": 1,
+          "cluster": "0402_TemperatureMeasurement",
+          "attribute": "0225_Invert"
+          },
+        "name": "Термостат, Инвертирование",
+        "type": "Boolean",
+        "init": false,
+        "value": false
+    },
+	{
+      "link": {
+        "endpoint": 1,
+        "cluster": "0402_TemperatureMeasurement",
+        "attribute": "0221_high_temp"
+		},
+      "name": "Термостат, верхняя температура",
+      "type": "Integer",
+      "init": false,
+      "value": 33,
+      "minValue": -40,
+      "maxValue": 90,
+      "minStep": 1
+	},
+	{
+      "link": {
+        "endpoint": 1,
+        "cluster": "0402_TemperatureMeasurement",
+        "attribute": "0222_low_temp"
+		},
+      "name": "Термостат, нижняя температура",
+      "type": "Integer",
+      "init": false,
+      "value": 22,
+      "minValue": -40,
+      "maxValue": 90,
+      "minStep": 1
+	},
+    {
+      "link": {
+        "endpoint": 1,
+        "cluster": "0006_OnOff",
+        "output": true
+      },
+      "name": "Прямая работа вкл/выкл",
+      "description": "Работает биндинг только одного параметра.",
+      "type": "String",
+      "bind": true,
+      "bindGroup": true
+    }
+  ]
+}
