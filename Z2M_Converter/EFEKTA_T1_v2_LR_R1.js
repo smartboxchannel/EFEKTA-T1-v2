@@ -95,8 +95,8 @@ const definition = {
         configure: async (device, coordinatorEndpoint, logger) => {
             const endpointOne = device.getEndpoint(1);
             await reporting.bind(endpointOne, coordinatorEndpoint, ['genPowerCfg', 'msTemperatureMeasurement']);
-			const overrides1 = {min: 0, max: 43200, change: 1};
-			const overrides2 = {min: 0, max: 1200, change: 10};
+			const overrides1 = {min: 3600, max: 43200, change: 1};
+			const overrides2 = {min: 45, max: 300, change: 15};
             await reporting.batteryVoltage(endpointOne, overrides1);
             await reporting.batteryPercentageRemaining(endpointOne, overrides1);
 			await reporting.batteryAlarmState(endpointOne, overrides1);
