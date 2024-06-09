@@ -107,10 +107,10 @@ const fzLocal = {
 };
 
 const definition = {
-        zigbeeModel: ['EFEKTA_T1_v2_LR'],
-        model: 'EFEKTA_T1_v2_LR',
+        zigbeeModel: ['EFEKTA_T1_v2'],
+        model: 'EFEKTA_T1_v2',
         vendor: 'EfektaLab',
-        description: 'EFEKTA_T1_v2_LR - temperature sensors with a signal amplifier. The device is equipped with a remote temperature sensor DS18b20. Simple Thermostat.',
+        description: 'EFEKTA_T1_v2 - Smart temperature sensors. The device is equipped with a remote temperature sensor DS18b20. Simple Thermostat.',
         fromZigbee: [fz.temperature, fz.battery, fzLocal.termostat_config, fzLocal.node_config, fzLocal.uptime],
         toZigbee: [tz.factory_reset, tzLocal.termostat_config, tzLocal.node_config],
         configure: async (device, coordinatorEndpoint, logger) => {
@@ -127,7 +127,7 @@ const definition = {
 		exposes: [e.temperature(), e.battery_low(), e.battery(), e.battery_voltage(),
 		    exposes.numeric('reading_interval', ea.STATE_SET).withUnit('Seconds').withDescription('Setting the sensor reading interval. Setting the time in seconds, by default 60 seconds')
                 .withValueMin(10).withValueMax(360),
-			exposes.enum('tx_radio_power', ea.STATE_SET, [0, 4, 10, 19]).withDescription('Set TX Radio Power, dbm)'),
+			exposes.enum('tx_radio_power', ea.STATE_SET, [0, 4]).withDescription('Set TX Radio Power, dbm)'),
 			exposes.binary('poll_rate_on', ea.STATE_SET, 'ON', 'OFF').withDescription('Poll rate on off'),
 			exposes.numeric('uptime', ea.STATE).withUnit('Hours').withDescription('Uptime'),
 			exposes.enum('resolution', ea.STATE_SET, [9, 10, 11, 12]).withDescription('Set Bit resolution DS18B20)'),
