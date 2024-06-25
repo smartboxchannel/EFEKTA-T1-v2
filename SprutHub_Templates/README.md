@@ -2,7 +2,7 @@ https://wiki.spruthub.ru/index.php?title=%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0
 
 Описание - https://telegra.ph/Datchik-temperatury-i-vlazhnosti-EFEKTA-T1T1-LR-v2-01-16
 
-![EFEKTA T1 v2 Temperature sensor](https://raw.githubusercontent.com/smartboxchannel/EFEKTA-T1-v2/main/Images/7608fbfc9937e00c3af5b.png) 
+![EFEKTA T1 v2 Temperature sensor](https://raw.githubusercontent.com/smartboxchannel/EFEKTA-T1-v2/main/Images/photo_2024-01-16_21-32-37.jpg) 
 
 Телеграм чат DIY Devices - https://t.me/diy_devices
 
