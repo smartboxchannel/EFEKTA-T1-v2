@@ -2,7 +2,7 @@
   "name": "Датчик EFEKTA T1 v2 Long Range",
   "manufacturer": "EfektaLab",
   "model": "EFEKTA_T1_v2_LR",
-  "manufacturerId": "EfektaLab",
+  "manufacturerId": "(EfektaLab|EfektaLab_for_Zigbee-Shop.ru)",
   "modelId": "EFEKTA_T1_v2_LR",
   "catalogId": -1,
   "status": "Test",
@@ -203,8 +203,7 @@
         "type": "String",
         "init": false,
         "write": false,
-        "input": "status",
-		"value": 0
+        "input": "status"
     },
 	{
         "link": {
