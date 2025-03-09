@@ -1,0 +1,63 @@
+{
+  "name": "Датчик EFEKTA T1 Y",
+  "manufacturer": "EfektaLab",
+  "model": "EFEKTA_T1_Y_LR",
+  "manufacturerId": "EfektaLab",
+  "modelId": "EFEKTA_T1_Y_LR",
+  "catalogId": -1,
+  "status": "Test",
+  "template": "/_Battery/BatteryPercentageRemaining.json",
+  "init": [
+  {
+      "link": {
+        "endpoint": 1,
+        "cluster": "0402_TemperatureMeasurement",
+        "attribute": "0000_MeasuredValue"
+      },
+        "bind": false,
+        "report": false
+    },
+    {
+        "link": {
+          "endpoint": 1,
+          "cluster": "0001_PowerConfiguration",
+		  "attribute": "0020_BatteryVoltage"
+        },
+        "bind": false,
+        "report": false
+    },
+	{
+        "link": {
+          "endpoint": 1,
+          "cluster": "0001_PowerConfiguration",
+          "attribute": "0021_BatteryPercentageRemaining"
+        },
+        "bind": false,
+        "report": false
+    },
+	{
+        "link": {
+          "endpoint": 1,
+          "cluster": "0001_PowerConfiguration",
+		  "attribute": "003E_BatteryAlarmState"
+        },
+        "bind": false,
+        "report": false
+    }
+  ],
+  "services": [
+    {
+      "type": "TemperatureSensor",
+      "characteristics": [
+        {
+          "type": "CurrentTemperature",
+          "link": {
+            "endpoint": 1,
+            "cluster": "0402_TemperatureMeasurement",
+            "attribute": "0000_MeasuredValue"
+          }
+        }
+      ]
+    }
+  ]
+}
