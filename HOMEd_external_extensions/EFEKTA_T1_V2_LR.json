@@ -1,0 +1,181 @@
+{
+  "EFEKTA": [
+    {
+      "description": "Temperature sensors with a signal amplifier. External DS18b20 sensor. Simple Thermostat.",
+      "modelNames": [
+        "EFEKTA_T1_v2_LR"
+      ],
+      "exposes": [
+        "temperature",
+        "battery",
+        "lifeTime",
+        "readInterval",
+        "transmitPower",
+        "smartSleep",
+        "configReportEnable",
+        "comparePrevious",
+        "resolution",
+        "enabling_temperature_control",
+        "temperature_actions",
+        "high_temperature",
+        "low_temperature"
+      ],
+      "options": {
+        "customAttributes_1": {
+          "lifeTime": {
+            "type": "value",
+            "clusterId": 10,
+            "attributeId": 7,
+            "dataType": 35
+          },
+          "readInterval": {
+            "type": "value",
+            "clusterId": 1,
+            "attributeId": 513,
+            "dataType": 33,
+            "action": true
+          },
+          "transmitPower": {
+            "type": "enum",
+            "clusterId": 1,
+            "attributeId": 566,
+            "dataType": 40,
+            "action": true
+          },
+          "smartSleep": {
+            "type": "bool",
+            "clusterId": 1,
+            "attributeId": 534,
+            "dataType": 16,
+            "action": true
+          },
+          "configReportEnable": {
+            "type": "bool",
+            "clusterId": 1,
+            "attributeId": 629,
+            "dataType": 16,
+            "action": true
+          },
+          "comparePrevious": {
+            "type": "bool",
+            "clusterId": 1,
+            "attributeId": 517,
+            "dataType": 16,
+            "action": true
+          },
+          "resolution": {
+            "type": "enum",
+            "clusterId": 1026,
+            "attributeId": 1312,
+            "dataType": 32,
+            "action": true
+          },
+          "enabling_temperature_control": {
+            "type": "bool",
+            "clusterId": 1026,
+            "attributeId": 544,
+            "dataType": 16,
+            "action": true
+          },
+          "temperature_actions": {
+            "type": "enum",
+            "clusterId": 1026,
+            "attributeId": 549,
+            "dataType": 16,
+            "action": true
+          },
+          "high_temperature": {
+            "type": "value",
+            "clusterId": 1026,
+            "attributeId": 545,
+            "dataType": 33,
+            "action": true
+          },
+          "low_temperature": {
+            "type": "value",
+            "clusterId": 1026,
+            "attributeId": 546,
+            "dataType": 33,
+            "action": true
+          }
+        },
+        "temperatureReporting": {
+          "minInterval": 20,
+          "maxInterval": 1200,
+          "valueChange": 15
+        },
+        "lifeTime": {
+          "type": "sensor",
+          "unit": "H"
+        },
+        "readInterval": {
+          "type": "number",
+          "min": 3,
+          "max": 360,
+          "unit": "sec"
+        },
+        "transmitPower": {
+          "type": "select",
+          "enum": {
+            "4": "4dBm",
+            "19": "19dBm"
+          }
+        },
+        "smartSleep": {
+          "type": "toggle"
+        },
+        "configReportEnable": {
+          "type": "toggle"
+        },
+        "comparePrevious": {
+          "type": "toggle"
+        },
+        "resolution": {
+          "type": "select",
+          "enum": {
+            "9": "9bit",
+            "10": "10bit",
+            "11": "11bit",
+            "12": "12bit"
+          }
+        },
+        "enabling_temperature_control": {
+          "type": "toggle"
+        },
+        "temperature_actions": {
+          "type": "select",
+          "enum": {
+            "0": "HEAT",
+            "1": "COOL"
+          }
+        },
+        "high_temperature": {
+          "min": -40,
+          "max": 150
+        },
+        "low_temperature": {
+          "min": -40,
+          "max": 150
+        }
+      }
+    },
+    {
+      "modelNames": [
+        "EFEKTA_T1_v2_LR"
+      ],
+      "properties": [
+        "batteryPercentage",
+        "temperature"
+      ],
+      "bindings": [
+        "battery",
+        "temperature"
+      ],
+      "reportings": [
+        "batteryPercentage",
+        "temperature"
+      ],
+      "endpointId": 1
+    }
+  ]
+}
