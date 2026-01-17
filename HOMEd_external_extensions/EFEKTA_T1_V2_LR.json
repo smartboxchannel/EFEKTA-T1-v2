@@ -15,10 +15,10 @@
         "configReportEnable",
         "comparePrevious",
         "resolution",
-        "enabling_temperature_control",
-        "temperature_actions",
-        "high_temperature",
-        "low_temperature"
+        "enablingTemperatureControl",
+        "temperatureActions",
+        "highTemperature",
+        "lowTemperature"
       ],
       "options": {
         "customAttributes_1": {
@@ -70,28 +70,28 @@
             "dataType": 32,
             "action": true
           },
-          "enabling_temperature_control": {
+          "enablingTemperatureControl": {
             "type": "bool",
             "clusterId": 1026,
             "attributeId": 544,
             "dataType": 16,
             "action": true
           },
-          "temperature_actions": {
+          "temperatureActions": {
             "type": "enum",
             "clusterId": 1026,
             "attributeId": 549,
             "dataType": 16,
             "action": true
           },
-          "high_temperature": {
+          "highTemperature": {
             "type": "value",
             "clusterId": 1026,
             "attributeId": 545,
             "dataType": 33,
             "action": true
           },
-          "low_temperature": {
+          "lowTemperature": {
             "type": "value",
             "clusterId": 1026,
             "attributeId": 546,
@@ -139,23 +139,23 @@
             "12": "12bit"
           }
         },
-        "enabling_temperature_control": {
+        "enablingTemperatureControl": {
           "type": "toggle"
         },
-        "temperature_actions": {
+        "temperatureActions": {
           "type": "select",
           "enum": {
             "0": "HEAT",
             "1": "COOL"
           }
         },
-        "high_temperature": {
-          "min": -40,
-          "max": 150
+        "highTemperature": {
+          "min": -50,
+          "max": 140
         },
-        "low_temperature": {
-          "min": -40,
-          "max": 150
+        "lowTemperature": {
+          "min": -50,
+          "max": 140
         }
       }
     },
